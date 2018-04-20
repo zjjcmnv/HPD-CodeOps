@@ -1,0 +1,31 @@
+uby
+yum install ruby.
+rmv, ruby managemnt verson:utilizando para dar um switch entre as versões instaladas na maquina.
+rmv install "versão":instala a versão expecifica do ruby.
+rmv use "versão":muda a versão expecifica.
+ruby -v:chega se esta instalado.
+ruby interativo:shell de ruby abrindo utilizando comando:irb.
+irb:console interativo do ruby.
+irb(main):001:0>irb(progamaqueestaaberto)(main)"(tread que vai interpretar o ruby)":001(numero de linhas):0(dentro do bloco de codigo 0)
+para sair comando:exit.
+puts:função para realizar a impressão da arquivo.
+metodo + parametros ex:puts "deseja sair agora"?.
+=>nil: executei a ultima chamada e não tenho mais nada a realizar.
+nome = "alex":declarando variavel.. variavel = "texto".
+clean code= livro.
+ruby-doc.org= documentação do ruby, pesquisar somente informações core.
+ruby-lang.org= site oficial do ruby.
+puts nome.class : retorna o tipo de classe do nome.
+criando string.
+tudo ""'' declarado dentro de aspas retorna string.
+todos .class e de todos e um classe comum.
+todo metodo que utiliza ! no final da variavel, altera o valor original.
+nill é o nulo.
+.size:retorna a quantidade de caracteres em inteiro.
+todo metodo que utiliza ? e uma conversão.
+.replace: ele troca o valor da string.
+.gsub "letra1", "letra2" e utilizado para troca a letra 1 pela letra 2 .
+também funciona .gsub("letra1","letra2"): a diferença e que caso você execute algum parametro adicional e aconselhado ().
+quando não tiver parâmetros pode utilizar normal.
+diferença entre "" a '':tudo por convensão e colocado '',para fazer concatenação das coisas"".
+
