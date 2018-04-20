@@ -1,0 +1,136 @@
+control + R: busca invertido no linux para buscar os comandos salvos no history.
+history -c :Apaga os comandos insertidos na sessão.
+.bash_history:fica salvo os comandos que foi inserido na sessão.
+quando nas permições tem d na frente o arquivo e diretorio,quando e l: "links simbolicos" o arquivo e um atalho,quando e C: caracter, quando o arquivo transfere informação,
+quando o arquivo tem na frente B: são dispostivos de bloco, tudo aquilo que armazena a informação.
+/bin: pasta de link universal
+/boot: diretorio de todo loading do boot do linux, aonde tem o grup que gerencia todo iniciamento do linux,inclusive o kernel do linux
+vmlinuz.
+/dev:aonde tem todos devices registrado no computador.
+/etc: diretorio etc, e guardado todos arquivos de configuração do dispositivo,softwares etc..
+/lib:são as bibliotecas compartilhadas salvas do linux,aonde os softwares utilizam.
+ldd para listar os arquivos que utilizam as bibliotecas exemplo:ldd /bin/ls para ver qual libs o comando ls utiliza.
+/lib/modules:são aonde ficam salvo os diretorios das lib do linux
+df -h mostra os discos e seus espaços, mount mostra aonde estão montados os arquivos.
+/media:aonde monta seus arquivos de discos.
+/mnt hd remotos,hd externos aqui que você monta.
+comando dmesg mostra log todo do kernel,boot,e após.
+/opt: aonde você joga todo conteudo que esta fora da distribuição do linux.
+/proc: tudo que acontece com o processador fica salvo no proc,diretorio dinamico e virtual, não existe no disco.
+e para ver melhor ps -ef.
+no proc se usar comando cat meminfo, mostra informações de utilização da memoria o mesmo para cat cpuinfo para informações detalhadas do cpu.
+/run: informações do sistema desdo ultimo boot.
+/sbin: binario exclusivo de uso do root, comandos que somente o root pode utilizar.
+/srv:conter dados que são servidor por esse sistema, ex:paginas do apache,ftp etc...
+/sys:traz informações dinamicas sobre o kernel e sistemas.
+/tmp:todas informações temporarias, em todos reboot e feito a limpa da pasta.
+/usr:tudo que for instalado após a instalação do linux e feita a instalação no usr.
+/usr/src:aonde baixa kernel para atualizar normalmente e feito a instalação neste diretorio.
+/var:arquivos que varião , exemplo:logs..
+tail -f:comando mostra ultimas 10 linhas e deixa o arquivo dinamico.
+arquivo secure no /var/log no redhat e aonde fica os logs de autenticação.
+syslog e rsyslog:caminho no debian /etc/rsyslog.d/50-default.conf e no centos:/etc/vim/rsyslog.conf, informa aonde fica salvo os logs.
+---
+Comandos:
+tar -xvf: para extrair o arquivo
+touch:Criar um arquivo vazio.
+id:demostra os detalhes do usuario atual, id master =0.
+niveis:quantidade de arquivos na pasta.
+chmod =muda permissão do arquivo.
+chown=muda dono do arquivo.
+chgrp== muda grupo do arquivo.
+Octal:
+R=4
+w=2
+x=1.
+Permições especiais:
+t=significa que o stickbit esta habilitado.
+stickbit: numero para adicionar e numero 1, impossibilitando a remoção do arquivo, somente habilitando com usuario criador.
+sgid:2 qualquer pessoa que executar o arquivo como se pertecece o dono do grupo do arquivo.
+suid:4 qualquer pessoa que executar o arquivo com suid fica como se fosse o dono do arquivo.
+exemplo: chmod 1755 arquivo.
+chmod g+w arquivo:adiciona no grupo permição de escrita.
+chmod g-w arquivo:remove permição de escrita.
+mkdir:cria diretorio.
+chmod -R arquivo:muda todos, tanto a pasta quantos os arquivos da mesma.
+userdell -r apaga toda a pool do usuario.
+nome:representa_a_senha:uid:gid:comentario:diretorio_home:shell.
+alguns diretorios importantes:
+cat /etc/shadow: aonde fica salvo as senhas.
+para verificar versão do centos comando:cat /etc/issue.
+/etc/yum.res.d/Centos-source.repo: repositorio do centos.
+/etc/apt/sources.list:repositorio no ubunto.
+-----------
+
+comando rpm -qa :mostra todos os pacotes instalados no centos.
+comando dpkg -l:mostra todos os pacotes instalados no ubunto.
+yum clean all:comando para limpar arquivos salvos pela instalação no yum.
+tem como atualizar somente um pacote por exemplo:yum update nginx.
+no ubunto apt-get dist-upgrade <- atualiza junto com suas dependencias.
+apt-cache show nginx: mostra informação do pacote que voce quer instalar no ubunto
+yum info nginx:mostra informação do pacote que voce quer instalar no centos
+yum info all:mostra informações de todos os pacotes.
+apt-cache showpkg nginx : mostra todas as dependencias do pacote no ubunto.
+yum groupinstall "web logic" baixa todas as dependencias do grupo de pacotes.
+yum groupinfo "web logic" mostra todas as informações do grupo de pacotes.
+yum grouplist "web logic" lista todo o grupo de dependencia do pacote.
+apt-get -f ele força a instalação tentando resolver todas as dependencias que falharam na instalação no ubunto.
+
+---
+explicações de pasta.
+- arquivo comum.
+s=socket.
+--------------------------------
+Aula 2 -GIT
+1-1:pre-aula VIM
+h:esquerda =,l:direita,j:desce e k:sobe.
+x:remove a sua direita e X: remove a sua esquerda, fora do modo de inserção.
+como inserir uma informação no vim:i, entra em modo inserção no cursos, I: entra no modo de inserção no inicio da linha.
+o:ele entra no modo de inserção abaixo da linha atual.
+O:adiciona na linha de cima.
+a:entra no modo de inserção uma palavra a frente.
+A:entra no modo de inserção após a ultima palavra.
+:<- entra em modo de comando.
+:q <- vai sair do arquivo.
+:q! <- força o quit  sem salvar.
+:wq <- sair e salva.
+:x <- sair e salva não altera ultima hora da ultima.
+shift+zz: sair e salva.
+:w nome do arquivo ou local do arquivo você salva como se estivesse salvando como no win.
+:r outro_arquivo: ele joga todas as linhas do outro_arquivo no vim atual apartir do seu cursor.
+:e outro_arquivo: ele abre o outro arquivo na sessão do vim atual sem precisar sair antes do arquivo atual.
+se tiver editado o arquivo atual e dar :e ele vai negar informando que precisa salvar, você tem como forçar utilizando :e!.
+:split outro_arquivo: você divide a tela com o outro_arquivo, deixando assim os 2 arquivos em aberto.
+ctrl+ww:você alterna de uma tela a outra.
+:vsplit:abre  mais uma tela de arquivo no vim em vertical.
+yy:copia a linha inteira e p:cola.
+dd:deleta a linha inteira e se aperta o p ele serve como recortar.
+2yy: copia as duas linhas,serve também se colocar 3 etc.
+u:seria o ctrl+z do windows,o desfazer alterações até a ultima alteração salva.
+ctrl+r:ele refazer as alterações.
+para apagar uma palavra por exemplo :quantidadedeletras+x
+shift+d:apaga do cursor para frente.
+v:entra no modo visual e você pode selecionar as linhas, para copiar e apenas y.
+shift+V:seleciona as linhas.
+ctrl+v:seleciona os blocos.
+gg:vai para primeira linha.
+shift+G:vai para ultima linha.
+:set number:mostra números de referencias.
+:set nunu:para retirar os números.
+nesse modo você pode fazer :numerodalinha+G: ele vai para linha.
+ww:pula de palavra em palavra.
+b para volta em palavra e palavra.
+{:volta paragrafo por paragrafo.
+}:avança paragrafo por paragrafo.
+f+palavra:ele vai ate a palavra que voce digitou.
+":desfaz os pulares que você fez
+dGG:apaga as linhas abaixo do cursor.
+/palavra:ele busca todas essas palavras, utiliza n:para próxima palavra abaixo e N:voltar para palavra acima.
+:linhas/palavrabuscada/palavraquequeralterar : ele corrige a primeira palavra expecifica na linha
+:linhas/palavrabuscada/palavraquequeralterar/g :altera todas palavras da linha.
+:linha,linha2s/palavrabuscada/palavraquequeralterar: altera entra a linhas que estão entra a linha e linha 2.
+:%s/palavrabuscada/palavraquequeralterar: muda o arquivo inteiro.
+:!comando: executa o comando no shell mostra e para retornar ao vim e so apertar enter.
+:r!comando:salva as informações do comando dentro do vim.
+:set hlsearch : set o comando para quando fazer o search ele selecionar.
+-------
