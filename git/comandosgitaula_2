@@ -1,0 +1,67 @@
+GIT:
+
+git init:comando para iniciar o diretorio do git.
+git config --global user.email "123@email.com.br" para configurar email padrao.
+git config --global user.name "Nome": configura nome.
+git config --global core.editor "vim"
+git status:mostra o status da pasta .git
+git add :adicionar os arquivos no .git e colocar . ou * ele pega todos arquivos.
+git commit -m "descrição":comita os arquivos com os detalhes.
+loga no git.
+starta um novo projeto, coloque o nome do projeto e a descrição do mesmo.
+após criar o projeto copiar o link na pagina que irá abrir e colocar o seguinte comando:
+git remote add origin "link que foi dado no site, no meu caso:https://github.com/zjjcmnv/girpops-hpd.git": ele vai criar o diretorio remote
+git push: pega do repositorio local e manda para o externo.
+git pull: pega do repositorio externo e manda para o interno.
+git remote -v: verifica qual repositorio remoto esta em uso.
+criando a chave caso peça:
+ssh-keygen -t rsa -b 4096 -C "kaick.09@gmail.com":comando para criar a keygem
+vai na pasta publica e copia a key.
+volta para o site do github, vai em settings, ssh and gpgkeys, add sshkey e coloca a key e sua descrição e adiciona.
+relizar comando no shell:ssh -T git@github.com.br
+Hi zjjcmnv! You've successfully authenticated, but GitHub does not provide shell access.
+se retornar essa descrição quer dizer que esta conectado.
+git push origin master: para subir as pastas como master no git.
+git pull origin master: para receber todos os arquivos do repositorio.
+origin e o nome da pasta que nos criamos no linux e o master e todas as pastas.
+git log: mostra o log dos commit.
+git log -p:mostra o log porém mais detalhado, e oque foi adicionado se adicionar -"numero" mostra os ultimos "numero" commits.
+git log -online:mostra o log de comite e oque foi feito em 1 linha.
+git add -A:adiciona todos os arquivos no stage.
+git reset HEAD arquivo:você remove ele no stage no git.
+git commit --amend:você entra na note do commit que foi feito e tem como alterar o detalhe do commit..
+git rm remove o arquivo.
+echo "mensagem"> arquivo.text :redireciona a mensagem para o arquivo.
+sequencia:criar o arquivo, fazer git add para ele entrar no git, git commit para ele comitar dentro da pasta local e por final dar git push para jogar o arquivo para nuvem.
+git clone "link da branch que quer clonar".
+adiciona o arquivo .gitignore e salva dentro .DS_Store
+git config --global core.excludesfile ~/.gitignore_global:configura o git para pegar o arquivo .gitignore e setar como principal para bloquear
+git checkout -b "nome da brench": cria uma brench, e como se fosse um ramo da mastery.
+git branch:verificar as branchs criadas.
+se eu adicionar a branch os novos commits seram redirecionadas para ele não para mastery.
+para alterar a branch:git checkout master: ele altera o mesmo para retornar.
+git diff "branch": ele mostra oque tem de diferente entre as branchs.
+git merge "branch":ele unifica as branchs porém não mata a branch.
+branch e como se fosse um snapshot do mastery.
+para deletar a branch: git branch -D "nome da branch".
+git push origin :about-page :comando para deletar no github a branch.
+git tag:mostra a versão da tag.
+git tag -a v1.0 -m "mensagem":seta a versão da tag.
+git tag -a v0.9 -m "mnsagem" c684"arquivo da realease no log --oneline": para setar uma configuração antiga.
+git push origin --tag:para dar push nas tags.
+git checkout v0.9:muda a versão da branch.
+git tag -d "v0.9":ele remove a tag.
+git push origin :v0.9 para dar o push e remover a tag no github.
+git checkout -- index.html:ele recupera o original antes do push
+git checkout versão -- arquivo:ele recupera o arquivo em alguma tag ou branch anterior.
+
+instala o git flow: no centos:yum install gitflow.
+git flow init:configura uma pasta para as develops.
+git flow feature start nome:cria uma feature.
+git flow feature finish nome:finaliza a feature e joga para develop.
+git flow feature publish nome :faz um push para a feature.
+git flow release start nome:cria uma release.
+git flow release publish nome:ele faz o push da realease.
+git push origin --tags.
+
+
